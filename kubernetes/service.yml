@@ -1,0 +1,16 @@
+# Service - LoadBalancer
+# # pb-service -lb.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: fruits-svc 
+  labels:
+    app: fruits-api 
+spec:
+  selector:
+    app: fruits-api 
+  type: LoadBalancer
+  ports:
+  - nodePort: 32750
+    port: 80
+    targetPort: 80
